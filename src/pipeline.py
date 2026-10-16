@@ -2,6 +2,7 @@ import pandas as pd
 
 from extract import CIDADES, buscar_clima
 from transform import transformar
+from load import carregar
 
 
 def rodar():
@@ -16,6 +17,5 @@ def rodar():
 
 if __name__ == "__main__":
     df = rodar()
-    print(df.head(10))
-    print()
-    print(df.info())
+    total = carregar(df)
+    print(f"{total} registros gravados no banco.")
